@@ -9,14 +9,17 @@ var passport = require('passport');
 // load the env vars
 require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
+
 //connect to MongoDB with mongoose
 require('./config/database');
 // to run the passport code
 require('./config/passport');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,9 +37,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+//this function makes it easier to find with req.user instead of saying res.locals.user
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  console.log(res.locals.user, req.user, "this the app use user.")
+  next();
+  });
+
 app.use('/major', require('./routes/products.js'))
+app.use('/users', usersRouter);
+app.use('/', indexRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

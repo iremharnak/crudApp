@@ -4,7 +4,7 @@ const passport = require('passport');
 const productCtrl = require('../controllers/product.js')
 
 /* GET home page. */
-router.get('/', productCtrl.landing);
+router.get('/', productCtrl.index);
 // handle the URL that our login btn will point to
 // passport will take the user to the consent screen
 router.get("/auth/google", passport.authenticate(
@@ -25,6 +25,6 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route, this will delete the cookie
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/major');
 });
 module.exports = router;

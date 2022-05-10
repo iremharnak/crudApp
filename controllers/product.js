@@ -1,12 +1,17 @@
 const User = require('../models/user');
-const product = require('../models/product')
+const Product = require('../models/product')
 
-function landing(req, res) {
+function index(req, res, next) {
+console.log('the logged in user is', req.user)
+console.log(req.query)
+
   res.render('products/landing.ejs', {
-    user: req.user,});
+    User,
+    user: req.User,
+    name:req.query.name});
 }
 
 
 module.exports = {
- landing 
+ index
 }

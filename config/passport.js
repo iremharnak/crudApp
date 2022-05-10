@@ -1,6 +1,7 @@
-const passport = require('passport');
-const User = require('../models/user');
+const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+const User = require('../models/user');
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -9,6 +10,7 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
   //is it a new user or someone who's logged in b4? if they're new, add them into the database
+  console.log("Google's info:", profile)
   User.findOne({ 'googleId': profile.id }, function(err, user) {
     if (err) return cb(err);
     if (user) {

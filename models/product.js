@@ -9,6 +9,7 @@ const productSchema = new Schema({
   category: String,
   brand: String,
   size : [],
+  imgURL: String
 })
 
 module.exports = mongoose.model('Product', productSchema);

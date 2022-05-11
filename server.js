@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
   next();
   });
 
-app.use('/major', require('./routes/products.js'))
+app.use('/products', require('./routes/products.js'))
 app.use('/users', usersRouter);
 app.use('/', indexRouter);
 // catch 404 and forward to error handler

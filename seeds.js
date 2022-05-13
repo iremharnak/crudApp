@@ -4,15 +4,16 @@ require('./config/database')
 const Product = require('./models/product');
 
 async function populate() {
-  await Product.deleteAll()
+  // await Product.deleteAll()
+  await Product.deleteMany()
   await Product.create({
     
     name: "Zynga",
     brand: "Nike",
     desc: "Chic, colourful and comfortable. This season's must have active piece great for a stroll in the city",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1oNf8oFqk36y9CTLAsz-R5MGLPgDUUjIZ/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071517548_083ff04415_b.jpg",
     price: 120
   })
   await Product.create({
@@ -20,9 +21,9 @@ async function populate() {
     name: "Boom",
     brand: "New Balance",
     desc: "If you are going for a run or fancy brunch, this will be your goto piece in your wardrobe. Versatile and comfortable with great heel support",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1AkXQZf8csZSTvIu1W0DTAOxyht5dV1AX/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071517593_ccc7970ef6_b.jpg",
     price: 66
   })
   await Product.create({
@@ -30,9 +31,9 @@ async function populate() {
     name: "Air Jordan",
     brand: "Nike",
     desc: "All time classic & great collectible comes back with all recyclable material this time.",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1pPYgssMe-287fVYsk2-GkVav-7jTA2CY/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52070464592_563a601598_b.jpgg",
     price: 230
   })
   await Product.create({
@@ -40,9 +41,9 @@ async function populate() {
     name: "Basics",
     brand: "Nike",
     desc: "Vibrant and classic. Blends minimal chic with optimal comfort. It's an everyday must. Made with recyclable plastic and reclaimed cotton",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/17F7PNvHNxTqNGkXjGF-s5oAyUAnqnFTs/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071739344_7082ef6c6a_b.jpg",
     price: 80
   })
   await Product.create({
@@ -50,9 +51,9 @@ async function populate() {
     name: "Hoops",
     brand: "Nike",
     desc: "Vibrant and classic. Blends minimal chic with optimal comfort. It's an everyday must. Made with recyclable plastic and reclaimed cotton",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/17F7PNvHNxTqNGkXjGF-s5oAyUAnqnFTs/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071739374_4ac21d65d9_b.jpg",
     price: 80
   })
   await Product.create({
@@ -60,9 +61,9 @@ async function populate() {
     name: "Air Light",
     brand: "Nike",
     desc: "Hip and comfortable. Water resistant and breathable. Air with a new twist of ecochic made with reclaimed Air Jordans",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1tRajH3qM6UWYlIS5ZyBwQIHggut1xMVz/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071517583_4b3267e31d_b.jpg",
     price: 100
   })
   await Product.create({
@@ -70,9 +71,9 @@ async function populate() {
     name: "Beat",
     brand: "Nike",
     desc: "Bringing basketball agility to stroll comfort. 100% water, sweat resistant, elastic material. An all time classic with maximum ergonomics.",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1CwpCyoPj9EIen45vO0mRw6CRoYzS1d-G/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071739344_7082ef6c6a_b.jpg",
     price: 100
   })
   await Product.create({
@@ -80,9 +81,9 @@ async function populate() {
     name: "Boardwalk",
     brand: "Converse",
     desc: "An all time classic. Blends minimal chic with optimal comfort. It's an everyday must. Made with recyclable plastic and reclaimed cotton.",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1CwpCyoPj9EIen45vO0mRw6CRoYzS1d-G/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071955135_2c9443f93b_b.jpg",
     price: 100
   })
   await Product.create({
@@ -90,9 +91,9 @@ async function populate() {
     name: "Samba",
     brand: "Adidas",
     desc: "Vintage remade with the latest technology. This is a collectible and eco-friendly piece made with reclaimed leather. Soles are made from organic material.",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1gQN2ouTSUg3iQzG5ksLgb73BiKI5Owto/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071739329_47468b5623_b.jpg",
     price: 90
   })
   await Product.create({
@@ -100,9 +101,9 @@ async function populate() {
     name: "Classic TM",
     brand: "Nike",
     desc: "If you are going for a run or fancy brunch, this will be your goto piece in your wardrobe. Versatile and comfortable with great heel support.",
-    category: "Activewear",
+    category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://drive.google.com/file/d/1gQN2ouTSUg3iQzG5ksLgb73BiKI5Owto/view?usp=sharing",
+    imgURL: "https://live.staticflickr.com/65535/52071739369_aab86a2124_b.jpg",
     price: 90
   })
 }

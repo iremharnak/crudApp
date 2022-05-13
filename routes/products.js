@@ -5,6 +5,8 @@ const productCtrl = require('../controllers/product.js')
 
 /* GET home page. */
 router.get('/', productCtrl.index);
+router.get('/sneakers', productCtrl.showSneakers)
+
 
 
 module.exports = router;

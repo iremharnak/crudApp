@@ -33,7 +33,7 @@ async function populate() {
     desc: "All time classic & great collectible comes back with all recyclable material this time.",
     category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://live.staticflickr.com/65535/52070464592_563a601598_b.jpgg",
+    imgURL: "https://live.staticflickr.com/65535/52070464592_563a601598_b.jpg",
     price: 230
   })
   await Product.create({

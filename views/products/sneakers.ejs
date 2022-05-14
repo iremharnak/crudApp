@@ -9,23 +9,18 @@
 </head>
 <body>
   <%- include ('../partials/nav') %>
+  <section class="wrapper">
   <%for (let i= 0; i < products.length; i++){%>
-    <div class="card" style="width: 18rem;">
-      <img src="<%=products[i].imgURL%>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%=products[i].name%></h5>
-        <p class="card-text"><%=products[i].price%></p>
-        <p class="card-text"><%=products[i].desc%></p>
-       
-        <select name="size" id="">
-          <%for (let j= 0; j < products[i].size.length; j++){%>
-          <option value=""><%=products[i].size[j]%></option>
-          <%}%>
-        </select>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="card" style="width: 18rem;">
+        <img src="<%=products[i].imgURL%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=products[i].name%></h5>
+          <p class="card-text"><%=products[i].price%></p>
+          <a href="/products/sneakers/<%=products[i]._id%>" class="btn btn-primary">details</a>
+        </div>
       </div>
-    </div>
  <%}%>
-  
+</section>
+<%- include ('../partials/footer') %>
 </body>
 </html>

@@ -10,7 +10,7 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
   //is it a new user or someone who's logged in b4? if they're new, add them into the database
-  console.log("Google's info:", profile)
+ 
   User.findOne({ 'googleId': profile.id }, function(err, user) {
     if (err) return cb(err);
     if (user) {

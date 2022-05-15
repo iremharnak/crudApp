@@ -11,5 +11,4 @@ const lineItemSchema = new Schema({
 })
 
 
-
 module.exports = mongoose.model('lineItem', lineItemSchema);

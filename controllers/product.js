@@ -7,10 +7,11 @@ const res = require('express/lib/response');
 // showing the home page
 function index(req, res, next) {
   
-  
+
   res.render('../views/products/landing.ejs', {
     user: req.user,
     name:req.query.name});
+    console.log(req.query)
 }
   function show(){
    res.render('../views/products/sneakers.ejs')
@@ -34,22 +35,26 @@ async function showDetail(req,res) {
 //add to cart function to navigate to next page
 async function addToCart(req,res) {
 //this line adds the id to the product object -> req.body now will have the 3 things it needs
-
 req.body.product = req.params.id
-
+console.log("reqbodyproduct is", req.body.product)
 //creating a new item with the id, quantity & size
 let cartItem =  await new LineItem(req.body)
+console.log("this is cart item", cartItem)
 //save makes the ID possible so you can push it later
-cartItem.save()
+console.log('saving is', cartItem.save())
 //find user by using req.user.id
-
 let user = await User.findById(req.user._id)
 user.cart.push(cartItem.id)
-user.save()
+await user.save()
 console.log('cart item is', cartItem)
 cartItem = await LineItem.findById(cartItem.id).populate('product')
+console.log('and NOW cartItem is', cartItem)
 res.render('products/checkout.ejs', {cartItem})
 }
+//delete line item
+// function deleteItem(req,res){
+
+// }
 module.exports = {
  index,
  show,

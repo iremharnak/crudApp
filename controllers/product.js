@@ -41,7 +41,7 @@ console.log("reqbodyproduct is", req.body.product)
 let cartItem =  await new LineItem(req.body)
 console.log("this is cart item", cartItem)
 //save makes the ID possible so you can push it later
-console.log('saving is', cartItem.save())
+await cartItem.save()
 //find user by using req.user.id
 let user = await User.findById(req.user._id)
 user.cart.push(cartItem.id)

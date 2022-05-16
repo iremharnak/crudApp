@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 const productCtrl = require('../controllers/product.js');
-const product = require('../models/product.js');
 
 /* GET home page. */
 router.get('/', productCtrl.index);
@@ -13,6 +12,7 @@ router.get('/sneakers/:id', productCtrl.showDetail)
 
 // add to cart route
 router.post('/sneakers/:id/cart', productCtrl.addToCart)
+
 
 
 

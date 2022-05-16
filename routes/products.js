@@ -15,5 +15,4 @@ router.post('/sneakers/:id/cart', productCtrl.addToCart)
 
 
 
-
 module.exports = router;

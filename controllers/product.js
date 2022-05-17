@@ -2,7 +2,7 @@ const User = require('../models/user');
 const Product = require('../models/product');
 const LineItem = require('../models/lineItem');
 const res = require('express/lib/response');
-// const user = require('../models/user');
+
 
 // showing the home page
 function index(req, res, next) {
@@ -29,22 +29,14 @@ async function showDetail(req, res) {
 
 //add to cart function
 async function addToCart(req, res) {
-  //the line below adds the id to the product object -> req.body now will have the 3 things it needs
-  req.body.product = req.params.id
-  console.log("reqbodyproduct is", req.body.product)
-  //creating a new item with the id, quantity & size
-  let cartItem = await new LineItem(req.body)
-  console.log("this is cart item", cartItem)
-  //save makes the ID possible so you can push it later
-  await cartItem.save()
-  //find user by using req.user.id
-  let user = await User.findById(req.user._id)
-  user.cart.push(cartItem.id)
-  await user.save()
-  console.log('cart item is', cartItem)
-  cartItem = await LineItem.findById(cartItem.id).populate('product')
-  console.log('and NOW cartItem is', cartItem)
-  res.render('products/checkout.ejs', { cartItem })
+  //parse form into newItem obj 
+  let newItem = req.body;
+  //add the logged user id to a new 'shopper' property to that obj
+  newItem.shopper = req.user.id,
+  //create new LineItem in the database using newItem & returns that to the newItem variable
+  newItem =await LineItem.create(newItem)
+  console.log("My new Item is: ", newItem)
+  res.send("check it out")
 }
 
 module.exports = {

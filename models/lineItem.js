@@ -7,7 +7,8 @@ const lineItemSchema = new Schema({
     ref: 'Product' // id belongs to this product
   },
   quantity: Number,
-  size: Number
+  size: Number,
+  shopper: Schema.Types.ObjectId //user._id goes here
 })
 
 

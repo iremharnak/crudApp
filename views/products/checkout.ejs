@@ -13,7 +13,6 @@
     <div class="card" style="width: 18rem;">
       <img src="<%=cartItem.product.imgURL%>" class="card-img-top" alt="...">
       <div class="card-body">
-       
         <h5 class="card-title"><%=cartItem.product.name%></h5>
         <p class="card-text"><%=cartItem.product.price%></p>
         <p class="card-text"><%=cartItem.size%></p>
@@ -21,9 +20,9 @@
         <form action="/lineItem/<%=cartItem._id%>?_method=DELETE" method="POST">
           <button class="btn btn-primary">Delete</button>
         </form>
-        
       </div>
     </div>
+    
     <%- include ('../partials/footer') %>
 </body>
 </html>

@@ -12,7 +12,8 @@
     <div class="card" style="width: 18rem;">
       <img src="<%=sneaker.imgURL%>" class="card-img-top" alt="...">
       <div class="card-body">
-        <form action="/products/sneakers/<%=sneaker._id%>/cart" method="POST">
+      
+        <form action="/products/add-to-cart" method="POST">
           <h5 class="card-title"><%=sneaker.name%></h5>
           <p class="card-text"><%=sneaker.price%></p>
           <p class="card-text"><%=sneaker.desc%></p>

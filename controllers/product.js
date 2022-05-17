@@ -34,9 +34,8 @@ async function addToCart(req, res) {
   //add the logged user id to a new 'shopper' property to that obj
   newItem.shopper = req.user.id,
     //create new LineItem in the database using newItem & returns that to the newItem variable
-    newItem = await LineItem.create(newItem)
+  newItem = await LineItem.create(newItem)
   console.log("My new Item is: ", newItem)
-  // res.send("check it out")
   res.redirect('/products/cart')
 }
 

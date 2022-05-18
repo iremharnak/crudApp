@@ -44,7 +44,7 @@ async function addToCart(req, res) {
   console.log('cart item is', cartItem)
   cartItem = await LineItem.findById(cartItem.id).populate('product')
   console.log('and NOW cartItem is', cartItem)
-  res.render('products/checkout.ejs', { cartItem })
+  res.render('products/cart.ejs', { cartItem })
 }
 
 module.exports = {

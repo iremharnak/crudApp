@@ -13,8 +13,8 @@
       <img src="<%=sneaker.imgURL%>" class="card-img-top" alt="...">
       <div class="card-body">
       
-        <form action="/products/add-to-cart" method="POST">
-          <h5 class="card-title"><%=sneaker.name%></h5>
+        <form action="/products/<%=sneaker._id%>" method="POST">
+          <h5 name="name" class="card-title"><%=sneaker.name%></h5>
           <p class="card-text"><%=sneaker.price%></p>
           <p class="card-text"><%=sneaker.desc%></p>
           <select name="size" id="">

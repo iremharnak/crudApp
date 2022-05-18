@@ -11,7 +11,7 @@ router.get('/sneakers', productCtrl.showSneakers)
 router.get('/sneakers/:id', productCtrl.showDetail)
 
 // add to cart route
-router.post('/add-to-cart', productCtrl.addToCart)
+router.post('/:id', productCtrl.addToCart)
 // render the cart page
 router.get('/cart', productCtrl.displayCart)
 

@@ -31,17 +31,19 @@ async function showDetail(req, res) {
 async function addToCart(req, res) {
   //parse form into newItem obj 
   let newItem = req.body;
-  //add the logged user id to a new 'shopper' property to that obj
+  newItem.product= req.params.id;
   newItem.shopper = req.user.id,
+  // console.log("reqDotBody is", newItem)
+  //add the logged user id to a new 'shopper' property to that obj
     //create new LineItem in the database using newItem & returns that to the newItem variable
   newItem = await LineItem.create(newItem)
-  console.log("My new Item is: ", newItem)
+  // console.log("My new Item is: ", newItem)
   res.redirect('/products/cart')
 }
 
 // render the cart
 async function displayCart(req, res) {
-  let cartItems = await LineItem({ shopper: req.user.id })
+  let cartItems = await LineItem.find({shopper: req.user.id}).populate('product')
   console.log("My cart items are", cartItems);
   res.render('../views/products/cart.ejs', { cartItems })
 }

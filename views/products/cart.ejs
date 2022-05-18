@@ -9,19 +9,20 @@
 <body>
   <%- include ('../partials/nav') %>
   <h2>Checkout</h2>
+  <%for (let i= 0; i < cartItems.length; i++){%>
     <div class="card" style="width: 18rem;">
-      <img src="<%=cartItems.product.imgURL%>" class="card-img-top" alt="...">
+      <img src="<%=cartItems[i].product.imgURL%>" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"><%=cartItems.product.name%></h5>
-        <p class="card-text"><%=cartItems.product.price%></p>
-        <p class="card-text"><%=cartItems.size%></p>
-        <p class="card-text"><%=cartItems.quantity%></p>
-        <form action="/lineItem/<%=cartItem._id%>?_method=DELETE" method="POST">
+        <h5 class="card-title"><%=cartItems[i].product.name%></h5>
+        <p class="card-text"><%=cartItems[i].product.price%></p>
+        <p class="card-text"><%=cartItems[i].size%></p>
+        <p class="card-text"><%=cartItems[i].quantity%></p>
+        <form action="/lineItem/<%=cartItems[i]._id%>?_method=DELETE" method="POST">
           <button class="btn btn-primary">Delete</button>
         </form>
       </div>
     </div>
-    
+    <%}%>
     <%- include ('../partials/footer') %>
 </body>
 </html>

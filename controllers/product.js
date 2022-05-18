@@ -47,10 +47,15 @@ async function displayCart(req, res) {
   console.log("My cart items are", cartItems);
   res.render('../views/products/cart.ejs', { cartItems })
 }
+async function purchaseAll(req,res) {
+  await LineItem.deleteMany({shopper: req.user.id})
+  res.redirect('/products')
+}
 module.exports = {
   index,
   showSneakers,
   showDetail,
   addToCart,
-  displayCart
+  displayCart,
+  purchaseAll
 }

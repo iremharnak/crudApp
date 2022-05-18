@@ -20,6 +20,9 @@
         <form action="/lineItem/<%=cartItems[i]._id%>?_method=DELETE" method="POST">
           <button class="btn btn-primary">Delete</button>
         </form>
+        <form action="/products/emptyCart?_method=DELETE" method="POST">
+          <button class="btn btn-primary">Purchase All</button>
+        </form>
       </div>
     </div>
     <%}%>

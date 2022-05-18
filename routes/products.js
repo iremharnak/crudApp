@@ -14,7 +14,8 @@ router.get('/sneakers/:id', productCtrl.showDetail)
 router.post('/:id', productCtrl.addToCart)
 // render the cart page
 router.get('/cart', productCtrl.displayCart)
-
+// purchase all 
+router.delete('/emptyCart', productCtrl.purchaseAll)
 
 
 module.exports = router;

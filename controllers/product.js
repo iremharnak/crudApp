@@ -54,7 +54,9 @@ async function purchaseAll(req,res) {
 
 async function updateCart(req,res) {
   let cartItem = await LineItem.findById(req.params.id)
-  LineItem.findAndModify(cartItem.quantity)
+  // LineItem.findAndModify(cartItem.quantity)
+  cartItem.quantity =req.body
+  cartItem.save()
   res.redirect('/products/cart')
 }
 

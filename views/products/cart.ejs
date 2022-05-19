@@ -17,7 +17,7 @@
         <p class="card-text"><%=cartItems[i].product.price%></p>
         <p class="card-text"><%=cartItems[i].size%></p>
         
-        <form action="/lineItem/<%=cartItems[i]._id%>?_method=PUT" method="POST">
+        <form action="/products/<%=cartItems[i]._id%>?_method=PUT" method="POST">
           <input name="quantity" placeholder="<%=cartItems[i].quantity%>" type="number">
           <button class="btn btn-primary">Change</button>
         </form>

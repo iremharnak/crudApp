@@ -2,6 +2,7 @@ const User = require('../models/user');
 const Product = require('../models/product');
 const LineItem = require('../models/lineItem');
 const res = require('express/lib/response');
+const lineItem = require('../models/lineItem');
 
 
 // showing the home page
@@ -51,10 +52,12 @@ async function purchaseAll(req,res) {
   res.redirect('/products')
 }
 
-// async function updateCart(req,res) {
+async function updateCart(req,res) {
+  let cartItem = await LineItem.findById(req.params.id)
+  LineItem.findAndModify(cartItem.quantity)
+  res.redirect('/products/cart')
+}
 
-//   res.redirect('/products')
-// }
 module.exports = {
   index,
   showSneakers,
@@ -62,5 +65,5 @@ module.exports = {
   addToCart,
   displayCart,
   purchaseAll,
-  // updateCart
+  updateCart
 }

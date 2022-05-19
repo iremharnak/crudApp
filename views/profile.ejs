@@ -7,14 +7,16 @@
   <title>Profile</title>
 </head>
 <body>
-  <%- include ('../partials/nav') %>
+  <%- include ('partials/nav') %>
   <section class="products">
     <div class="wrapper">
       <h2 class="product-title">My Account</h2>
-      <a href=""><img src="/images/login-user-icon.png" alt=""></a>
-      <h4>Account details</h4>
+      <h5>Account details</h5>
+      <p>Name: <%=customer.name%></p>
+      <p>Email: <%=customer.email%></p>
+
     </div>
   </section>
-  <%- include ('../partials/footer') %>
+  <%- include ('partials/footer') %>
 </body>
 </html>

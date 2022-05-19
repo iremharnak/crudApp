@@ -16,16 +16,20 @@
         <h5 class="card-title"><%=cartItems[i].product.name%></h5>
         <p class="card-text"><%=cartItems[i].product.price%></p>
         <p class="card-text"><%=cartItems[i].size%></p>
-        <p class="card-text"><%=cartItems[i].quantity%></p>
+        
+        <form action="/lineItem/<%=cartItems[i]._id%>?_method=PUT" method="POST">
+          <input name="quantity" placeholder="<%=cartItems[i].quantity%>" type="number">
+          <button class="btn btn-primary">Change</button>
+        </form>
         <form action="/lineItem/<%=cartItems[i]._id%>?_method=DELETE" method="POST">
           <button class="btn btn-primary">Delete</button>
-        </form>
-        <form action="/products/emptyCart?_method=DELETE" method="POST">
-          <button class="btn btn-primary">Purchase All</button>
         </form>
       </div>
     </div>
     <%}%>
+    <form action="/products/emptyCart?_method=DELETE" method="POST">
+      <button class="btn btn-primary">Purchase All</button>
+    </form>
     <%- include ('../partials/footer') %>
 </body>
 </html>

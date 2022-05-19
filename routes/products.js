@@ -16,6 +16,10 @@ router.post('/:id', productCtrl.addToCart)
 router.get('/cart', productCtrl.displayCart)
 // purchase all 
 router.delete('/emptyCart', productCtrl.purchaseAll)
+// update qty on cart
+// router.put('/updateCart', productCtrl.updateCart)
+// router.get('/updateCart', productCtrl.updateCart)
+
 
 
 module.exports = router;

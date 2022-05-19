@@ -33,11 +33,10 @@ async function addToCart(req, res) {
   let newItem = req.body;
   newItem.product= req.params.id;
   newItem.shopper = req.user.id,
-  // console.log("reqDotBody is", newItem)
   //add the logged user id to a new 'shopper' property to that obj
     //create new LineItem in the database using newItem & returns that to the newItem variable
   newItem = await LineItem.create(newItem)
-  // console.log("My new Item is: ", newItem)
+  
   res.redirect('/products/cart')
 }
 
@@ -51,11 +50,17 @@ async function purchaseAll(req,res) {
   await LineItem.deleteMany({shopper: req.user.id})
   res.redirect('/products')
 }
+
+// async function updateCart(req,res) {
+
+//   res.redirect('/products')
+// }
 module.exports = {
   index,
   showSneakers,
   showDetail,
   addToCart,
   displayCart,
-  purchaseAll
+  purchaseAll,
+  // updateCart
 }

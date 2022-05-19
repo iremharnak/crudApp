@@ -52,11 +52,9 @@ async function purchaseAll(req,res) {
   res.redirect('/products')
 }
 
+
 async function updateCart(req,res) {
-  let cartItem = await LineItem.findById(req.params.id)
-  // LineItem.findAndModify(cartItem.quantity)
-  cartItem.quantity =req.body
-  cartItem.save()
+  let cartItem = await LineItem.findByIdAndUpdate(req.params.id,req.body)
   res.redirect('/products/cart')
 }
 

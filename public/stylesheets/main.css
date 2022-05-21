@@ -7,12 +7,16 @@ body {
   color: #616161;
   background-color: #F8F9FA;
 }
+.hero, .products {
+  background-color: #F8F9FA;
+}
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 /* typography */
-h1, h2, h4, h5 {
+h1, h2, h4, h5, h6 {
   font-weight: 700;
   color: #212121;
 }
@@ -31,15 +35,16 @@ h4 {
   color: #ffffff;
 }
 /* layout */
-
+/* homepage */
 .wrapper {
   max-width: 1200px;
   padding: 20px 20px;
   margin: 0 auto;
 }
 /* navbar */
-.logo {
+#logo {
   margin-right: 60px;
+  margin-left: 0px;
 }
 .wrap-nav {
   display: flex;
@@ -75,6 +80,9 @@ h4 {
   margin-top: 44px;
 }
 /* middle section */
+.trend-product-title {
+  margin-bottom: 40px;
+}
 .products {
   text-align: center;
   padding-bottom: 44px;
@@ -85,7 +93,6 @@ h4 {
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 400;
-  
 }
 .product-gallery {
   display: flex;
@@ -112,4 +119,108 @@ footer {
   flex-direction: row;
   gap: 5px;
   justify-content: space-between;
+}
+
+/* sneakers index page */
+.pageTitle {
+  margin-bottom: 40px;
+}
+.productCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* align-items: center; */
+  grid-gap: 1.1rem;
+}
+
+/* sneaker show page */
+.product-single {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.product-img {
+  width: 45%;
+}
+.product-info {
+  width: 35%;
+  margin-left: 30px;
+}
+.product-title, .product-brand, .product-price, .product-copy {
+  margin-bottom: 10px;
+}
+.product-input {
+  display: flex;
+  flex-direction: column;
+}
+.qty-input, .size-input {
+  width: 100%;
+  background-color: #F8F9FA;
+  color: #616161;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border:  1px solid #424242;
+  /* border-radius: 4px; */
+  cursor: pointer;
+}
+.btn-addToCart {
+  background-color: #212121;
+  padding: 18px 75px 14px;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* cart page */
+.cart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cart-checkout {
+  align-self: flex-end;
+}
+.product-in-cart {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.product-in-cart-info {
+  display: flex;
+  gap: 200px;
+}
+.product-in-cart-name, .product-in-cart-size {
+  margin-bottom: 10px;
+}
+.product-in-cart-img {
+  width: 20%;
+}
+.product-in-cart-price {
+  font-weight: 700;
+}
+.qty-input-group {
+  display: flex;
+  gap: 5px;
+}
+.btn-update {
+  width: 70%;
+}
+.product-in-cart-aside {
+  align-self: flex-start;
+  margin-left: 329px;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+/* profile page */
+span {
+  font-weight: 700;
+}
+.acc-detail-title, .acc-detail-name, .acc-detail-email {
+  margin-bottom: 10px;
 }

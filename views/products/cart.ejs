@@ -4,32 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sneaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <title>Cart</title>
 </head>
 <body>
   <%- include ('../partials/nav') %>
-  <h2>Checkout</h2>
+  <section class="wrapper wrap-cart">
+  <h2 class="pageTitle">My Cart</h2>
   <%for (let i= 0; i < cartItems.length; i++){%>
-    <div class="card" style="width: 18rem;">
-      <img src="<%=cartItems[i].product.imgURL%>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%=cartItems[i].product.name%></h5>
-        <p class="card-text"><%=cartItems[i].product.price%></p>
-        <p class="card-text"><%=cartItems[i].size%></p>
-        
-        <form action="/products/<%=cartItems[i]._id%>?_method=PUT" method="POST">
-          <input name="quantity" placeholder="<%=cartItems[i].quantity%>" type="number">
-          <button class="btn btn-primary">Change</button>
-        </form>
-        <form action="/lineItem/<%=cartItems[i]._id%>?_method=DELETE" method="POST">
-          <button class="btn btn-primary">Delete</button>
-        </form>
+    <div class="cart-body">
+      <div class="product-in-cart">
+        <div class="product-in-cart-img"><img src="<%=cartItems[i].product.imgURL%>" class="card-img-top" alt="..."></div>
+        <div class="product-in-cart-info">
+          <div class="product-in-cart-info-main">
+            <h5 class="product-in-cart-name"><%=cartItems[i].product.name%></h5>
+            <p class="product-in-cart-size">Size: <%=cartItems[i].size%></p>
+            <form action="/products/<%=cartItems[i]._id%>?_method=PUT" method="POST">
+              <label for="">Quantity:</label>
+              <div class="qty-input-group">
+                <input class= "qty-input" name="quantity" placeholder="<%=cartItems[i].quantity%>" type="number">
+                <button class="btn btn-update"><img src="/images/update-icon.png" alt=""></button>
+              </div>
+            </form>
+          </div>
+          <div class="product-in-cart-aside">
+            <h6 class="product-in-cart-price"><%=cartItems[i].product.price%>CAD</h6>
+            <form action="/lineItem/<%=cartItems[i]._id%>?_method=DELETE" method="POST">
+              <button class="btn-delete"><img src="/images/delete-icon.png" alt=""></button>
+            </form>
+          </div>
+        </div>
       </div>
+      <%}%>
+      <form class="cart-checkout" action="/products/emptyCart?_method=DELETE" method="POST">
+        <button class="cta-btn-black">CHECKOUT</button>
+      </form>
     </div>
-    <%}%>
-    <form action="/products/emptyCart?_method=DELETE" method="POST">
-      <button class="btn btn-primary">Purchase All</button>
-    </form>
+  </section>
+  
     <%- include ('../partials/footer') %>
 </body>
 </html>

@@ -8,17 +8,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
   <title>Profile</title>
 </head>
 <body>
   <%- include ('partials/nav') %>
-  <section class="products">
-    <div class="wrapper">
-      <h2 class="product-title">My Account</h2>
-      <h5>Account details</h5>
-      <p>Name: <%=customer.name%></p>
-      <p>Email: <%=customer.email%></p>
-      
+  <section class="wrapper">
+    <div>
+      <h2 class="pageTitle">My Account</h2>
+      <h5 class="acc-detail-title">Account details</h5>
+      <p class="acc-detail-name"><span>Name:</span> <%=customer.name%></p>
+      <p class="acc-detail-email"><span>Email:</span> <%=customer.email%></p>
     </div>
   </section>
   <%- include ('partials/footer') %>

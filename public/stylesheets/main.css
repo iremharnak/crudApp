@@ -187,9 +187,9 @@ footer {
   /* align-items: center; */
   grid-gap: 1.1rem;
 }
-/* .wrap-cart {
+.wrap-cart {
   height: 82vh;
-} */
+}
 .cart-body {
   display: flex;
   flex-direction: column;

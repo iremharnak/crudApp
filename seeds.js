@@ -76,16 +76,7 @@ async function populate() {
     imgURL: "https://live.staticflickr.com/65535/52071739344_7082ef6c6a_b.jpg",
     price: 100
   })
-  await Product.create({
-    
-    name: "Boardwalk",
-    brand: "Converse",
-    desc: "An all time classic. Blends minimal chic with optimal comfort. It's an everyday must. Made with recyclable plastic and reclaimed cotton.",
-    category: "Sneakers",
-    size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://live.staticflickr.com/65535/52071955135_2c9443f93b_b.jpg",
-    price: 100
-  })
+ 
   await Product.create({
     
     name: "Samba",
@@ -94,16 +85,6 @@ async function populate() {
     category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
     imgURL: "https://live.staticflickr.com/65535/52071739329_47468b5623_b.jpg",
-    price: 90
-  })
-  await Product.create({
-    
-    name: "Classic TM",
-    brand: "Nike",
-    desc: "If you are going for a run or fancy brunch, this will be your goto piece in your wardrobe. Versatile and comfortable with great heel support.",
-    category: "Sneakers",
-    size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://live.staticflickr.com/65535/52071739369_aab86a2124_b.jpg",
     price: 90
   })
 }

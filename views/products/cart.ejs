@@ -13,14 +13,14 @@
 </head>
 <body>
   <%- include ('../partials/nav') %>
-  <section class="wrapper wrap-cart">
+  <section id="wrapCart" class="wrapper">
     <h2 class="pageTitle">My Cart</h2>
     <% if (cartItems.length > 0) { %>
     <div class="cart-content">
       <%for (let i= 0; i < cartItems.length; i++){%>
         <div class="cart-body">
           <div class="product-in-cart">
-            <div class="product-in-cart-img"><img src="<%=cartItems[i].product.imgURL%>" class="card-img-top" alt="..."></div>
+            <div class="product-in-cart-img"><img src="<%=cartItems[i].product.imgURL%>" alt="..."></div>
             <div class="product-in-cart-info">
               <div class="product-in-cart-info-main">
                 <h5 class="product-in-cart-name"><%=cartItems[i].product.name%></h5>
@@ -48,10 +48,12 @@
         </div>
     </div>
     <% } else { %>
-      <h5>You have nothing in your cart yet</h5>
+      
+      <h5>You have nothing in your cart</h5>
     <% } %>
     </section>
     
     <%- include ('../partials/footer') %>
+
   </body>
   </html>

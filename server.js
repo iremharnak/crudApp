@@ -12,6 +12,7 @@ require('dotenv').config();
 
 var app = express();
 
+
 //connect to MongoDB with mongoose
 require('./config/database');
 // to run the passport code

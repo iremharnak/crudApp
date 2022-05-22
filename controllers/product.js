@@ -22,7 +22,7 @@ async function showSneakers(req, res, next) {
   });
 }
 
-//  show shoe detail page
+// show shoe detail page
 async function showDetail(req, res) {
   let sneaker = await Product.findById(req.params.id);
   res.render('../views/products/show-sneaker.ejs', { sneaker });

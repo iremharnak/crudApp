@@ -47,12 +47,13 @@ async function displayCart(req, res) {
   console.log("My cart items are", cartItems);
   res.render('../views/products/cart.ejs', { cartItems })
 }
+// purchase action - aka remove all items from cart
 async function purchaseAll(req,res) {
   await LineItem.deleteMany({shopper: req.user.id})
   res.redirect('/products')
 }
 
-
+// update the quantity of shoe
 async function updateCart(req,res) {
   let cartItem = await LineItem.findByIdAndUpdate(req.params.id,req.body)
   res.redirect('/products/cart')

@@ -38,12 +38,12 @@ h4 {
   color: #ffffff;
 }
 /* layout */
-/* homepage */
 .wrapper {
   max-width: 1200px;
   padding: 20px 20px;
   margin: 0 auto;
 }
+
 /* navbar */
 #logo {
   margin-right: 60px;
@@ -62,6 +62,10 @@ h4 {
 .nav-item a {
   margin-left: 20px;
 }
+.product-link:hover {
+  text-decoration: underline;
+}
+/* landing */
 /* hero section */
 .wrap-hero {
   position: relative;
@@ -176,6 +180,16 @@ footer {
 }
 
 /* cart page */
+/* grid is not doing anything */
+.cart-content {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+  /* align-items: center; */
+  grid-gap: 1.1rem;
+}
+/* .wrap-cart {
+  height: 82vh;
+} */
 .cart-body {
   display: flex;
   flex-direction: column;
@@ -223,6 +237,7 @@ footer {
 /* profile page */
 span {
   font-weight: 700;
+  margin-right: 5px;
 }
 .acc-detail-title, .acc-detail-name, .acc-detail-email {
   margin-bottom: 10px;

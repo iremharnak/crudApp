@@ -188,7 +188,7 @@ footer {
   grid-gap: 1.1rem;
 }
 .wrap-cart {
-  height: 82vh;
+  min-height: 82vh;
 }
 .cart-body {
   display: flex;
@@ -243,5 +243,5 @@ span {
   margin-bottom: 10px;
 }
 .content-wrap {
-  height: 77vh;
+  min-height: 77vh;
 }

@@ -43,7 +43,7 @@ async function populate() {
     desc: "Vibrant and classic. Blends minimal chic with optimal comfort. It's an everyday must. Made with recyclable plastic and reclaimed cotton",
     category: "Sneakers",
     size: [35, 36, 37, 38, 39, 40, 42],
-    imgURL: "https://live.staticflickr.com/65535/52071739344_7082ef6c6a_b.jpg",
+    imgURL: "https://live.staticflickr.com/65535/52070464572_45772c9877_b.jpg",
     price: 80
   })
   await Product.create({

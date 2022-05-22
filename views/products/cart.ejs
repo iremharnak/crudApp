@@ -15,6 +15,7 @@
   <%- include ('../partials/nav') %>
   <section class="wrapper wrap-cart">
     <h2 class="pageTitle">My Cart</h2>
+    <% if (cartItems.length > 0) { %>
     <div class="cart-content">
       <%for (let i= 0; i < cartItems.length; i++){%>
         <div class="cart-body">
@@ -45,7 +46,10 @@
             <button class="cta-btn-black">CHECKOUT</button>
           </form>
         </div>
-      </div>
+    </div>
+    <% } else { %>
+      <h5>You have nothing in your cart yet</h5>
+    <% } %>
     </section>
     
     <%- include ('../partials/footer') %>

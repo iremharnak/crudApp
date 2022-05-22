@@ -3,7 +3,7 @@ var router = express.Router();
 const passport = require('passport')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 //oauth route
 router.get("/auth/google", passport.authenticate(
@@ -24,7 +24,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route, this will delete the cookie
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/products');
+  res.redirect('/');
 });
 
 module.exports = router;

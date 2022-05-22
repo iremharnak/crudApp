@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <title>MAJOR</title>
+</head>
+<body>
+  <%- include ('./partials/nav') %>
+<section class="hero">
+  <div class="wrapper wrap-hero">
+    <div class="hero-img"><img src="/images/hero-img.png" alt=""></div>
+    <div class="hero-cta">
+      <h1 class="hero-title">Great Sport</h1>
+      <a href="/products/sneakers" class="cta-btn-white">SHOP THE TREND</a>
+    </div>
+  </div>
+</section>
+<section class="products">
+  <div class="wrapper">
+    <h2 class="trend-product-title">Pair your sporty separates with your favorite sneaker</h2>
+    <div class="product-gallery">
+      <div class="product-gallery-item"><img src="https://live.staticflickr.com/65535/52071517548_083ff04415_b.jpg" alt="">
+      </div>
+      <div class="product-gallery-item"><img src="https://live.staticflickr.com/65535/52070464592_563a601598_b.jpg" alt="">
+      </div>
+      <div class="product-gallery-item"><img src="https://live.staticflickr.com/65535/52070464572_45772c9877_b.jpg" alt="">
+      </div>
+      <div class="product-gallery-item"><img src="https://live.staticflickr.com/65535/52071517583_4b3267e31d_b.jpg" alt="">
+      </div>
+    </div>
+    <a href="/products/sneakers" class="cta-btn-black">View All</a>
+  </div>
+</section>
+<%- include ('./partials/footer') %>
+
+</body>
 </html>

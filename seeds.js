@@ -1,11 +1,13 @@
+// connect to the .env file
+require('dotenv').config();
 //connect this script to the database
 require('./config/database')
 
 const Product = require('./models/product');
 
 async function populate() {
-  // await Product.deleteAll()
-  await Product.deleteMany()
+  
+  // await Product.deleteMany()
   await Product.create({
     
     name: "Zynga",

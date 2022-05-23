@@ -43,8 +43,10 @@ async function addToCart(req, res) {
 
 // render the cart
 async function displayCart(req, res) {
-  let cartItems = await LineItem.find({shopper: req.user.id}).populate('product')
-  console.log("My cart items are", cartItems);
+  let cartItems = await LineItem.find({shopper: req.user.id}).populate('product').exec();
+
+  
+  // console.log("My cart items are", cartItems);
   res.render('../views/products/cart.ejs', { cartItems })
 }
 // purchase action - aka remove all items from cart

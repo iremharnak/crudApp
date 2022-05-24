@@ -24,7 +24,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route, this will delete the cookie
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/products');
+  res.redirect('/');
 });
 
 module.exports = router;

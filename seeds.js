@@ -1,3 +1,4 @@
+require('dotenv').config();
 //connect this script to the database
 require('./config/database')
 
